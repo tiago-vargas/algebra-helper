@@ -16,6 +16,6 @@ class Parser:
 
 def _get_token_type(lexeme: str) -> Token.Type:
 	if lexeme == '+':
-		return Token.Type.OPERATOR
+		return Token.Type.Operator.PLUS
 	else:
-		return Token.Type.NUMBER
+		return Token.Type.Number.INT

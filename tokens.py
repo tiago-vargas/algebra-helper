@@ -6,6 +6,9 @@ class Token:
 	def __eq__(self, other) -> bool:
 		return self.token_type == other.token_type and self.lexeme == other.lexeme
 
-	class Type(enumerate):
-		NUMBER = 1
-		OPERATOR = 2
+	class Type:
+		class Number(enumerate):
+			INT = 'Number.Int'
+
+		class Operator(enumerate):
+			PLUS = 'Operator.Plus'
