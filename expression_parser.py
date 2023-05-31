@@ -1,9 +1,9 @@
 from tokens import Token, TokenType
 
 
-class Parser:
+class Scanner:
 	@classmethod
-	def parse(cls, expression: str) -> list[Token]:
+	def scan(cls, expression: str) -> list[Token]:
 		tokens = []
 
 		lexemes = expression.split(sep=' ')
