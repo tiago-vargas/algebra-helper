@@ -8,6 +8,14 @@ class Token:
 
 
 class TokenType:
+	class Relation:
+		EQUAL = 'Relation.Equal'
+		BANG_EQUAL = 'Relation.BangEqual'
+		LESS = 'Relation.Less'
+		LESS_EQUAL = 'Relation.LessEqual'
+		GREATER = 'Relation.Greater'
+		GREATER_EQUAL = 'Relation.GreaterEqual'
+
 	class Number(enumerate):
 		INT = 'Number.Int'
 
