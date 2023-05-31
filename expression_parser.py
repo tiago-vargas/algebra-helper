@@ -23,5 +23,7 @@ def _get_token_type(lexeme: str) -> TokenType:
 		return TokenType.Operator.STAR
 	elif lexeme == '/':
 		return TokenType.Operator.BAR
+	elif lexeme == '=':
+		return TokenType.Relation.EQUAL
 	else:
 		return TokenType.Number.INT
