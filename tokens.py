@@ -6,13 +6,15 @@ class Token:
 	def __eq__(self, other) -> bool:
 		return self.token_type == other.token_type and self.lexeme == other.lexeme
 
-	def __repr__(self) -> str:
-		return f"<{self.token_type}:'{self.lexeme}'>"
-
 
 class TokenType:
 	class Relation:
 		EQUAL = 'Relation.Equal'
+		BANG_EQUAL = 'Relation.BangEqual'
+		LESS = 'Relation.Less'
+		LESS_EQUAL = 'Relation.LessEqual'
+		GREATER = 'Relation.Greater'
+		GREATER_EQUAL = 'Relation.GreaterEqual'
 
 	class Number(enumerate):
 		INT = 'Number.Int'

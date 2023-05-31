@@ -25,5 +25,15 @@ def _get_token_type(lexeme: str) -> TokenType:
 		return TokenType.Operator.BAR
 	elif lexeme == '=':
 		return TokenType.Relation.EQUAL
+	elif lexeme == '!=':
+		return TokenType.Relation.BANG_EQUAL
+	elif lexeme == '<':
+		return TokenType.Relation.LESS
+	elif lexeme == '<=':
+		return TokenType.Relation.LESS_EQUAL
+	elif lexeme == '>':
+		return TokenType.Relation.GREATER
+	elif lexeme == '>=':
+		return TokenType.Relation.GREATER_EQUAL
 	else:
 		return TokenType.Number.INT

@@ -32,3 +32,10 @@ class TestRelations:
 		assert tokens == [Token(Type.Number.INT, lexeme='1'), Token(Type.Operator.PLUS, lexeme='+'),
 		                  Token(Type.Number.INT, lexeme='1'), Token(Type.Relation.EQUAL, lexeme='='),
 		                  Token(Type.Number.INT, lexeme='2')]
+
+	def test_parsing_other_relations(self):
+		tokens = Parser.parse('= != < <= > >=')
+
+		assert tokens == [Token(Type.Relation.EQUAL, lexeme='='),  Token(Type.Relation.BANG_EQUAL, lexeme='!='),
+		                  Token(Type.Relation.LESS, lexeme='<'), Token(Type.Relation.LESS_EQUAL, lexeme='<='),
+		                  Token(Type.Relation.GREATER, lexeme='>'), Token(Type.Relation.GREATER_EQUAL, lexeme='>=')]
