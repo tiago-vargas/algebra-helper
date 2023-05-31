@@ -13,3 +13,6 @@ class TokenType:
 
 	class Operator(enumerate):
 		PLUS = 'Operator.Plus'
+		MINUS = 'Operator.Minus'
+		STAR = 'Operator.Star'
+		BAR = 'Operator.Bar'

@@ -13,3 +13,13 @@ class TestExpressions:
 		tokens = Parser.parse('100 + 2')
 
 		assert tokens == [Token(Type.Number.INT, lexeme='100'), Token(Type.Operator.PLUS, lexeme='+'), Token(Type.Number.INT, lexeme='2')]
+
+	def test_parsing_many_operations(self):
+		tokens = Parser.parse('10 + 2 - 1 * 0 / 0')
+
+		assert tokens == [Token(Type.Number.INT, lexeme='10'), Token(Type.Operator.PLUS, lexeme='+'),
+		                  Token(Type.Number.INT, lexeme='2'), Token(Type.Operator.MINUS, lexeme='-'),
+		                  Token(Type.Number.INT, lexeme='1'), Token(Type.Operator.STAR, lexeme='*'),
+		                  Token(Type.Number.INT, lexeme='0'), Token(Type.Operator.BAR, lexeme='/'),
+		                  Token(Type.Number.INT, lexeme='0'),
+		                  ]
