@@ -8,6 +8,9 @@ class Token:
 
 
 class TokenType:
+	class Symbol(enumerate):
+		VAR = 'Symbol.Var'
+
 	class Relation:
 		EQUAL = 'Relation.Equal'
 		BANG_EQUAL = 'Relation.BangEqual'

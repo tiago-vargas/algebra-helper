@@ -39,3 +39,13 @@ class TestRelations:
 		assert tokens == [Token(Type.Relation.EQUAL, lexeme='='),  Token(Type.Relation.BANG_EQUAL, lexeme='!='),
 		                  Token(Type.Relation.LESS, lexeme='<'), Token(Type.Relation.LESS_EQUAL, lexeme='<='),
 		                  Token(Type.Relation.GREATER, lexeme='>'), Token(Type.Relation.GREATER_EQUAL, lexeme='>=')]
+
+
+class TestVariables:
+	def test_parsing_many_single_letter_variables(self):
+		tokens = Parser.parse('y = m * x + n')
+
+		assert tokens == [Token(Type.Symbol.VAR, lexeme='y'), Token(Type.Relation.EQUAL, lexeme='='),
+		                  Token(Type.Symbol.VAR, lexeme='m'), Token(Type.Operator.STAR, lexeme='*'),
+		                  Token(Type.Symbol.VAR, lexeme='x'), Token(Type.Operator.PLUS, lexeme='+'),
+		                  Token(Type.Symbol.VAR, lexeme='n')]

@@ -35,5 +35,7 @@ def _get_token_type(lexeme: str) -> TokenType:
 		return TokenType.Relation.GREATER
 	elif lexeme == '>=':
 		return TokenType.Relation.GREATER_EQUAL
-	else:
+	elif lexeme.isnumeric():
 		return TokenType.Number.INT
+	elif lexeme.isalpha():
+		return TokenType.Symbol.VAR
