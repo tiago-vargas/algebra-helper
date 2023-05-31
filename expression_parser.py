@@ -1,4 +1,4 @@
-from tokens import Token
+from tokens import Token, TokenType
 
 
 class Parser:
@@ -14,8 +14,8 @@ class Parser:
 		return tokens
 
 
-def _get_token_type(lexeme: str) -> Token.Type:
+def _get_token_type(lexeme: str) -> TokenType:
 	if lexeme == '+':
-		return Token.Type.Operator.PLUS
+		return TokenType.Operator.PLUS
 	else:
-		return Token.Type.Number.INT
+		return TokenType.Number.INT
